@@ -8,7 +8,7 @@ For each message in the session, you mark it as one of:
 - **Summarize** — fed to the summarizer LLM
 - **Drop** — excluded from both the summary and every subsequent LLM call
 
-Selections persist across pi restarts via `pi.appendEntry`. The browser UI is served from a localhost-only HTTP+WebSocket server with a per-invocation auth token (same pattern as `[pi-studio](https://github.com/omaclaren/pi-studio)`).
+Selections persist across pi restarts via `pi.appendEntry`. The browser UI is served from a localhost-only HTTP+WebSocket server with a per-invocation auth token (same pattern as [pi-studio](https://github.com/omaclaren/pi-studio)).
 
 ## Install
 
