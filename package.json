@@ -1,0 +1,39 @@
+{
+  "name": "ctx-ctrl",
+  "version": "0.1.0",
+  "description": "Pi extension for selective compaction via a browser UI",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "pi-package",
+    "pi-extension"
+  ],
+  "files": [
+    "index.ts",
+    "shared",
+    "core",
+    "server",
+    "client",
+    "README.md"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "pi": {
+    "extensions": [
+      "./index.ts"
+    ]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "@types/ws": "^8.18.1",
+    "typescript": "^5.7.3",
+    "@earendil-works/pi-coding-agent": "^0.74.0"
+  }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ctx-ctrl</title>
+<link rel="stylesheet" href="/client.css?token=__TOKEN__" />
+</head>
+<body>
+<main id="app" aria-live="polite">
+	<header class="bar bar-top">
+		<div class="brand">
+			<strong>ctx-ctrl</strong>
+			<span id="session-label" class="muted"></span>
+		</div>
+		<div class="controls">
+			<label class="toggle">
+				<input type="checkbox" id="active-toggle" />
+				<span>Active</span>
+			</label>
+			<button id="clear-btn" type="button" class="ghost">Clear all marks</button>
+		</div>
+	</header>
+
+	<section class="legend">
+		<p>
+			<strong style="color:var(--keep)">Keep</strong> = preserve verbatim ·
+			<strong style="color:var(--summarize)">Summarize</strong> = fold into summary ·
+			<strong style="color:var(--drop)">Drop</strong> = omit entirely
+		</p>
+		<p class="muted">
+			Unmarked entries are kept by default — only entries you explicitly mark Summarize or Drop are affected by compaction.
+		</p>
+		<p class="muted">
+			<strong>Apply compaction</strong> forks into a new session: each contiguous run of Summarize-marked entries becomes one branch summary row, with Keep entries preserved as siblings. The original session stays reachable via <code>/switch-session</code> or <code>/tree</code>.
+		</p>
+	</section>
+
+	<section class="instructions">
+		<label for="instructions">Custom instructions for summarizer</label>
+		<textarea id="instructions" rows="2"
+			placeholder="Optional extra guidance for the summarizer (e.g. 'Emphasize the auth refactor decisions')."></textarea>
+	</section>
+
+	<section class="timeline" aria-label="Session entries">
+		<div id="entries" class="entries">
+			<p class="empty">Connecting…</p>
+		</div>
+	</section>
+
+	<footer class="bar bar-bot">
+		<div id="usage" class="usage">Context: …</div>
+		<div class="actions">
+			<button id="compact-btn" type="button" class="primary">Apply compaction</button>
+		</div>
+	</footer>
+</main>
+<script src="/client.js?token=__TOKEN__" type="module"></script>
+</body>
+</html>
